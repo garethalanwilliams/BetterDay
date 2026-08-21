@@ -3,61 +3,196 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>BetterDay Test MVP</title>
-<link rel="stylesheet" href="styles.css">
+<title>BetterDay V3</title>
+<style>
+:root{--bg:#f5f5f0;--card:#fff;--ink:#1e2925;--muted:#6e7974;--line:#dde4df;--accent:#315c4a;--accent2:#e7efe9;--good:#2f7256;--warm:#f0ebe1}
+*{box-sizing:border-box}html,body{margin:0;background:#dfe4df;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink)}body{display:flex;justify-content:center}.app{width:min(430px,100vw);min-height:100dvh;background:var(--bg);padding-bottom:84px}header{padding:calc(17px + env(safe-area-inset-top)) 20px 10px;display:flex;justify-content:space-between;align-items:center}.logo{font-size:23px;font-weight:850;letter-spacing:-1px}.textbtn,.back{border:0;background:none;color:var(--accent);font-weight:800}.back{padding:8px 0}main{padding:0 18px 30px}.screen{display:none}.screen.active{display:block}h1{font-size:31px;line-height:1.05;letter-spacing:-1.2px;margin:7px 0 7px}h2{font-size:20px;letter-spacing:-.4px;margin:7px 0}.sub,.small,p{color:var(--muted);line-height:1.5}.sub{font-size:14px}.small{font-size:12px}.eyebrow{font-size:11px;font-weight:850;letter-spacing:.5px;color:var(--muted)}.light{color:#dce8e2}.card{background:var(--card);border:1px solid var(--line);border-radius:21px;padding:17px;margin:14px 0}.hero{background:var(--accent);color:white;border:0}.hero p{color:#e2ece7}.hero.soft{background:var(--accent2);color:var(--ink)}.hero.soft p{color:var(--muted)}.heroIcon{font-size:26px}.heroTitle{font-size:29px;font-weight:850;letter-spacing:-1px;margin-top:5px}.heroTitle.dark{color:var(--ink)}.focusCard{border-left:4px solid var(--accent)}.tip{background:var(--accent2);border-radius:12px;padding:11px;margin-top:12px;font-size:13px;font-weight:700}.sectionTitle{font-weight:850;margin:22px 0 9px}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px}.metric{background:#fff;border:1px solid var(--line);border-radius:16px;padding:13px;min-height:91px}.metric span,.metric small{display:block;color:var(--muted);font-size:11px}.metric strong{display:block;font-size:16px;margin:7px 0 3px}.primary,.secondary,.photo{width:100%;border-radius:14px;padding:14px;font-weight:850;font-size:15px}.primary{border:0;background:var(--accent);color:#fff}.secondary,.photo{border:1px solid #b9c8c0;background:#fff;color:var(--accent);margin-top:10px}.photo{display:flex;justify-content:space-between}.photo span{font-size:11px;color:var(--muted)}label{display:block;font-size:12px;font-weight:800;margin:12px 0}input,select,textarea{display:block;width:100%;margin-top:7px;border:1px solid var(--line);background:#fff;border-radius:13px;padding:12px;font:inherit}input[type=range]{padding:0}.rangeEnds{display:flex;justify-content:space-between;font-size:11px;color:var(--muted)}details summary{font-weight:850;cursor:pointer}details summary span{font-weight:500;color:var(--muted);font-size:12px}.row{display:flex;justify-content:space-between;gap:10px;align-items:center}.quick{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px}.quick button{border:1px solid var(--line);background:#fff;border-radius:13px;padding:10px 5px;font-size:17px}.quick b,.quick small{display:block;font-size:11px}.tag{background:var(--accent2);color:var(--accent);border-radius:999px;padding:6px 9px;font-size:11px;font-weight:850}.assessment{margin:14px 0}.assessment>span{font-size:12px;color:var(--muted)}.segmented label{margin:7px 0}.segmented input{display:none}.segmented span{display:block;border:1px solid var(--line);border-radius:12px;padding:11px;font-weight:700}.segmented input:checked+span{border-color:var(--accent);background:var(--accent2);color:var(--accent)}.alcohol{display:grid;grid-template-columns:repeat(5,1fr);gap:6px}.alcohol button{padding:10px 3px;border:1px solid var(--line);border-radius:11px;background:#fff;font-weight:800}.alcohol button.active{background:var(--accent);color:#fff}.meal{padding:10px 0;border-bottom:1px solid var(--line)}.meal:last-child{border-bottom:0}.mealTop{display:flex;justify-content:space-between;gap:8px}.mealTag{font-size:10px;font-weight:850;color:var(--good)}.success{background:#eef6f0;border-color:#d3e7d9}.progress{height:9px;background:#dce4df;border-radius:99px;overflow:hidden;margin:14px 0 6px}.progress div{height:100%;background:var(--accent);width:0}.bigProgress{font-size:48px;font-weight:850;margin-top:12px}.bigProgress small{font-size:17px;color:var(--muted)}.hidden{display:none!important}.toast{position:fixed;bottom:90px;left:50%;transform:translateX(-50%);background:#1e2925;color:#fff;padding:10px 14px;border-radius:99px;font-size:12px;opacity:0;pointer-events:none;transition:.2s}.toast.show{opacity:1}.sheet{position:fixed;inset:0;background:#0006;display:flex;align-items:flex-end;justify-content:center;z-index:20}.sheetCard{width:min(430px,100vw);background:#fff;border-radius:24px 24px 0 0;padding:20px 20px calc(20px + env(safe-area-inset-bottom))}.sheetCard>button:not(.secondary){width:100%;padding:13px;margin:5px 0;border:1px solid var(--line);border-radius:12px;background:#fff;font-weight:800}nav{position:fixed;left:50%;transform:translateX(-50%);bottom:0;width:min(430px,100vw);background:#fff;border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(4,1fr);padding:7px 6px calc(7px + env(safe-area-inset-bottom));z-index:10}nav button{border:0;background:none;font-size:20px;color:#64706b}nav button span{display:block;font-size:10px;font-weight:850}@media(min-width:700px){.app{box-shadow:0 0 40px #0001}}
+</style>
 </head>
 <body>
 <div class="app">
-<header><div class="logo">betterday</div><div id="appStatus" class="status bad">App starting…</div></header>
+<header><div class="logo">betterday</div><button id="demoBtn" class="textbtn" type="button">Demo</button></header>
 <main>
 <section id="today" class="screen active">
-<h1>Today</h1><div id="dateLabel" class="sub"></div>
-<div class="card hero"><div class="sub light">LIFESTYLE SCORE</div><div id="lifestyleScore" class="score">—</div><div id="balanceLabel" class="pill">Add today's data</div></div>
-<div class="card"><div class="kicker">TODAY'S FOCUS</div><div id="focusTitle" class="focus">Start with a quick check-in</div><div id="focusText" class="small">Add sleep and mood so BetterDay can guide today.</div></div>
-<div class="grid2"><div class="metric"><strong id="foodMini">—</strong><span>Food</span></div><div class="metric"><strong id="moveMini">—</strong><span>Movement</span></div><div class="metric"><strong id="sleepMini">—</strong><span>Sleep</span></div><div class="metric"><strong id="waterMini">—</strong><span>Hydration</span></div></div>
-<div class="card"><div class="row"><b>❤️ Recovery</b><span id="recoveryState" class="tag">Not enough data</span></div><p id="recoveryWhy" class="small"></p></div>
-<button class="primary" data-go="checkin">Morning check-in</button>
+  <div class="eyebrow" id="greeting">GOOD MORNING</div>
+  <h1 id="todayHeadline">Let's see how you're starting today</h1>
+  <div id="dateLabel" class="sub"></div>
+
+  <div id="preCheckin" class="card hero soft">
+    <div class="heroIcon">☀️</div>
+    <h2>A quick check-in helps BetterDay understand your recovery.</h2>
+    <p>Then we'll choose the most useful focus for today.</p>
+    <button class="primary" data-go="checkin">Start 60-second check-in</button>
+  </div>
+
+  <div id="postCheckin" class="hidden">
+    <div class="card hero">
+      <div class="eyebrow light">TODAY'S RECOVERY</div>
+      <div id="recoveryState" class="heroTitle">Well recovered</div>
+      <p id="recoveryWhy"></p>
+    </div>
+    <div class="card focusCard">
+      <div class="eyebrow">TODAY'S FOCUS</div>
+      <h2 id="focusTitle">Keep the balance</h2>
+      <p id="focusText">Nothing needs correcting this morning. Eat well, drink regularly and move as planned.</p>
+      <div id="startWith" class="tip">Start with: get some water in this morning.</div>
+    </div>
+  </div>
+
+  <div class="sectionTitle">Today</div>
+  <div class="grid2">
+    <div class="metric"><span>Food</span><strong id="foodMini">Not logged</strong><small id="foodSub">Add your first meal</small></div>
+    <div class="metric"><span>Movement</span><strong id="moveMini">Not planned</strong><small id="moveSub">No pressure</small></div>
+    <div class="metric"><span>Sleep</span><strong id="sleepMini">Not checked</strong><small id="sleepSub">Morning check-in</small></div>
+    <div class="metric"><span>Hydration</span><strong id="waterMini">Getting started</strong><small id="waterSub">0 ml today</small></div>
+  </div>
+  <button id="updateCheckin" class="secondary hidden" data-go="checkin">Update morning check-in</button>
 </section>
 
 <section id="checkin" class="screen">
-<h1>Morning check-in</h1><div class="sub">About a minute.</div>
-<form id="checkinForm" class="card">
-<label>Sleep duration (hours)<input id="sleepHours" type="number" min="0" max="12" step="0.1" placeholder="7.2"></label>
-<label>How was your sleep?<select id="sleepQuality"><option value="">Select</option><option value="2">Poor</option><option value="4">Below average</option><option value="6">OK</option><option value="8">Good</option><option value="10">Excellent</option></select></label>
-<label>How do you feel this morning? (1–10)<input id="mood" type="number" min="1" max="10" step="1" placeholder="7"></label>
-<label>HRV last night, optional (ms)<input id="hrv" type="number" min="1" max="250"></label>
-<label>7-day HRV baseline, optional (ms)<input id="hrvBase" type="number" min="1" max="250"></label>
-<label>Resting heart rate today, optional<input id="rhr" type="number" min="30" max="140"></label>
-<label>Usual resting heart rate, optional<input id="rhrBase" type="number" min="30" max="140"></label>
-<label>Purposeful movement today (minutes)<input id="moveMinutes" type="number" min="0" max="600" step="5" placeholder="45"></label>
-<label>Intensity<select id="moveIntensity"><option value="0">None</option><option value="1">Easy</option><option value="2">Moderate</option><option value="3">Hard</option></select></label>
-<button class="primary" type="submit">Save check-in</button>
-</form>
+  <button class="back" data-go="today">← Today</button>
+  <div class="eyebrow">MORNING</div><h1>How are you starting?</h1><div class="sub">Three quick questions. Wearable data is optional.</div>
+  <form id="checkinForm">
+    <div class="card">
+      <label>How long did you sleep?<input id="sleepHours" type="number" min="0" max="12" step=".1" placeholder="7.5"></label>
+      <label>How was your sleep?<select id="sleepQuality"><option value="">Choose</option><option value="4">Poor</option><option value="6">OK</option><option value="8">Good</option><option value="10">Great</option></select></label>
+    </div>
+    <div class="card">
+      <label>How do you feel this morning? <span id="moodValue">7</span>/10
+        <input id="mood" type="range" min="1" max="10" value="7">
+      </label>
+      <div class="rangeEnds"><span>Rough</span><span>Great</span></div>
+    </div>
+    <div class="card">
+      <label>Planning any purposeful movement today?
+        <select id="movePlan"><option value="rest">Rest / normal day</option><option value="light">Light</option><option value="moderate">Moderate</option><option value="hard">Hard</option></select>
+      </label>
+      <label id="moveDurationWrap" class="hidden">Roughly how long? (minutes)<input id="moveMinutes" type="number" min="5" max="300" step="5" placeholder="45"></label>
+    </div>
+    <details class="card">
+      <summary>Add wearable data <span>optional</span></summary>
+      <p class="small">BetterDay compares these with your own normal range, not other people's numbers.</p>
+      <label>HRV last night (ms)<input id="hrv" type="number" min="1" max="250"></label>
+      <label>Your recent HRV baseline (ms)<input id="hrvBase" type="number" min="1" max="250"></label>
+      <label>Resting heart rate today<input id="rhr" type="number" min="30" max="140"></label>
+      <label>Your usual resting heart rate<input id="rhrBase" type="number" min="30" max="140"></label>
+    </details>
+    <button class="primary" type="submit">See my day →</button>
+  </form>
 </section>
 
 <section id="log" class="screen">
-<h1>Log</h1><div class="sub">Simple language. No calories or macros.</div>
-<form id="mealForm" class="card">
-<h2>Food</h2>
-<label>Describe what you ate<textarea id="mealText" rows="3" placeholder="Porridge with banana and Greek yoghurt"></textarea></label>
-<label>NOVA 4 proportion of this meal: <b id="nova4Label">0%</b><input id="nova4Range" type="range" min="0" max="100" step="5" value="0"></label>
-<div class="notice">For this test version, you set the NOVA 4 estimate. Later AI will assess the meal and ask you to confirm.</div>
-<button class="primary" type="submit">Add meal</button>
-</form>
-<div class="card"><div class="row"><b>💧 Hydration</b><span id="waterTotal">0 ml</span></div><div class="quick"><button type="button" data-water="250">+250 ml</button><button type="button" data-water="500">+500 ml</button><button type="button" data-water="750">+750 ml</button></div><label>Daily target (ml)<input id="waterTarget" type="number" value="2000" step="100"></label></div>
-<div class="card"><div class="kicker">TODAY'S MEALS</div><div id="mealList" class="small">No meals logged yet.</div></div>
+  <div class="eyebrow">QUICK LOG</div><h1>What have you had?</h1><div class="sub">Simple language. No calories or macros.</div>
+  <form id="mealForm" class="card">
+    <h2>Food</h2>
+    <label>Tell BetterDay in your own words<textarea id="mealText" rows="3" placeholder="e.g. porridge, banana and Greek yoghurt"></textarea></label>
+    <button id="photoBtn" class="photo" type="button">📷 Take a photo <span>prototype</span></button>
+    <div class="assessment">
+      <span>For this prototype, choose the closest fit:</span>
+      <div class="segmented">
+        <label><input type="radio" name="mealType" value="5" checked><span>Mostly minimally processed</span></label>
+        <label><input type="radio" name="mealType" value="35"><span>Mixed</span></label>
+        <label><input type="radio" name="mealType" value="75"><span>Mostly ultra-processed</span></label>
+      </div>
+    </div>
+    <button class="primary" type="submit">Add meal</button>
+  </form>
+  <div id="mealConfirmation" class="card success hidden"></div>
+  <div class="card">
+    <div class="row"><div><div class="eyebrow">HYDRATION</div><h2><span id="waterTotal">0</span> ml today</h2></div><span id="waterStatus" class="tag">Getting started</span></div>
+    <div class="quick"><button type="button" data-water="250">🥛<b>Glass</b><small>+250</small></button><button type="button" data-water="300">☕<b>Mug</b><small>+300</small></button><button type="button" data-water="500">💧<b>Bottle</b><small>+500</small></button></div>
+  </div>
+  <div class="card">
+    <div class="eyebrow">ALCOHOL</div><h2>Any alcohol today?</h2>
+    <div class="alcohol" id="alcoholChoices"></div>
+    <p class="small">No judgement. This simply helps BetterDay learn what seems to affect your sleep and recovery.</p>
+  </div>
+  <div class="card"><div class="eyebrow">TODAY'S MEALS</div><div id="mealList"><p class="small">No meals logged yet.</p></div></div>
 </section>
 
 <section id="insights" class="screen">
-<h1>Insights</h1><div class="card"><div class="kicker">WHY THIS SCORE?</div><div id="whyScore" class="small"></div></div><div class="card"><div class="kicker">RECOVERY</div><div id="recoveryDetail" class="small"></div></div>
+  <div class="eyebrow">INSIGHTS</div><h1>What BetterDay is learning</h1>
+  <div class="card hero soft">
+    <div id="learningTitle" class="heroTitle dark">Building your picture</div>
+    <p id="learningText">Keep logging and BetterDay will start looking for relationships between what you do and how you feel.</p>
+    <div class="progress"><div id="learningBar"></div></div><div id="learningDays" class="small"></div>
+  </div>
+  <div class="card"><div class="eyebrow">RIGHT NOW</div><h2 id="insightNowTitle">Too early to call</h2><p id="insightNowText">We won't invent patterns before there's enough evidence.</p></div>
+  <div class="card"><div class="eyebrow">RECOVERY</div><h2 id="insightRecoveryTitle">Check in first</h2><p id="insightRecoveryText">Your morning check-in helps BetterDay interpret how you're responding.</p></div>
 </section>
 
 <section id="progress" class="screen">
-<h1>Weekly review</h1><div class="card hero"><div class="sub light">7-DAY AVERAGE</div><div id="weeklyAvg" class="score">—</div></div><div class="card"><div id="weeklyStats" class="small">Start logging to build your week.</div></div><div class="card"><div class="kicker">NEXT FOCUS</div><div id="weeklyFocus" class="focus">Keep building the picture</div><div id="weeklyFocusText" class="small"></div></div><button id="resetButton" class="secondary" type="button">Reset prototype data</button>
+  <div class="eyebrow">PROGRESS</div><h1>Weekly review</h1>
+  <div id="reviewBuilding" class="card hero soft">
+    <div class="heroTitle dark">Your first review is taking shape</div>
+    <div class="bigProgress"><span id="reviewCount">0</span><small>/ 7 days</small></div>
+    <div class="progress"><div id="reviewBar"></div></div>
+    <p>BetterDay needs a little history before drawing conclusions. Your review will look at how your habits work together.</p>
+  </div>
+  <div id="reviewReady" class="hidden">
+    <div class="card hero"><div class="eyebrow light">YOUR WEEK</div><div class="heroTitle">A week worth learning from</div><p id="weekSummary"></p></div>
+    <div class="card"><div class="eyebrow">WHAT WENT WELL</div><h2 id="wentWellTitle"></h2><p id="wentWellText"></p></div>
+    <div class="card"><div class="eyebrow">WHAT BETTERDAY NOTICED</div><h2 id="noticedTitle"></h2><p id="noticedText"></p></div>
+    <div class="card focusCard"><div class="eyebrow">ONE THING FOR NEXT WEEK</div><h2 id="nextFocusTitle"></h2><p id="nextFocusText"></p></div>
+  </div>
 </section>
 </main>
-<nav><button data-go="today">⌂<span>Today</span></button><button data-go="log">＋<span>Log</span></button><button data-go="insights">◌<span>Insights</span></button><button data-go="progress">▥<span>Progress</span></button></nav>
+<nav>
+<button data-go="today">⌂<span>Today</span></button><button data-go="log">＋<span>Log</span></button><button data-go="insights">○<span>Insights</span></button><button data-go="progress">▥<span>Progress</span></button>
+</nav>
+<div id="toast" class="toast"></div>
+<div id="demoSheet" class="sheet hidden"><div class="sheetCard"><h2>Prototype demo</h2><p>Jump forward without waiting a week.</p><button data-demo="day1">Day 1</button><button data-demo="day4">Day 4</button><button data-demo="day8">Day 8</button><button data-demo="reset">Reset all data</button><button id="closeDemo" class="secondary">Close</button></div></div>
 </div>
-<script src="app.js" defer></script>
-</body>
-</html>
+<script>
+ 'use strict';
+const KEY='betterday-v3';
+const $=id=>document.getElementById(id);
+const todayKey=()=>new Date().toISOString().slice(0,10);
+function emptyDay(){return{meals:[],water:0,alcohol:0,waterTarget:2000}}
+function getAll(){let a={days:{}};try{a=JSON.parse(localStorage.getItem(KEY)||'{"days":{}}')}catch(e){};a.days ||= {};a.days[todayKey()] ||= emptyDay();return a}
+function save(a){localStorage.setItem(KEY,JSON.stringify(a))}
+function day(){return getAll().days[todayKey()]}
+function clamp(x,a,b){return Math.max(a,Math.min(b,x))}
+function foodScore(d){if(!d.meals?.length)return null;const n=d.meals.reduce((s,m)=>s+(+m.nova4||0),0)/d.meals.length;if(n===0)return 10;return clamp(10-Math.ceil(n/10),0,9)}
+function sleepScore(d){if(!d.sleepHours)return null;const h=+d.sleepHours;let dur=h>=7&&h<=9?10:h>=6.5&&h<7?8:h>9&&h<=10?8:h>=6?6:h>=5?4:2;const q=+d.sleepQuality||6;return Math.round((dur*.7+q*.3)*10)/10}
+function recovery(d){let pos=0,neg=0,parts=[];const s=sleepScore(d);if(s!=null){if(s>=8){pos++;parts.push('sleep was strong')}else if(s<6){neg++;parts.push('sleep was below your usual target')}}if(d.mood){if(+d.mood>=8){pos++;parts.push('you reported feeling good')}else if(+d.mood<=4){neg++;parts.push('you reported feeling low')}}if(d.hrv&&d.hrvBase){const q=+d.hrv/+d.hrvBase;if(q<.9){neg++;parts.push('HRV is below your recent baseline')}else if(q>1.05){pos++;parts.push('HRV is above your recent baseline')}else parts.push('HRV is close to your recent baseline')}if(d.rhr&&d.rhrBase){const x=+d.rhr-+d.rhrBase;if(x>=5){neg++;parts.push('resting heart rate is higher than usual')}else if(x<=-3){pos++;parts.push('resting heart rate is lower than usual')}else parts.push('resting heart rate is close to usual')}let state='Normal';if(neg>=2)state='Take it easier';else if(pos>=2&&neg===0)state='Well recovered';return{state,why:parts.length?parts.join('; ')+'.':'Your check-in gives us a starting point.'}}
+function hydrationStatus(d){const h=new Date().getHours(), target=+d.waterTarget||2000, expected=target*clamp((h-7)/14,0.08,1), ratio=(+d.water||0)/Math.max(expected,1);if(h<10&&+d.water===0)return'Getting started';if(ratio>=.8)return'On track';if(ratio>=.55)return'A little behind';return'Worth a drink'}
+function mealLabel(n){return n<=10?'Mostly minimally processed':n<=50?'Mixed':'Mostly ultra-processed'}
+function loggedDays(a){return Object.values(a.days).filter(d=>d.checkin||d.meals?.length||d.water>0).length}
+function show(id){document.querySelectorAll('.screen').forEach(x=>x.classList.remove('active'));$(id).classList.add('active');window.scrollTo(0,0);render()}
+function toast(t){$('toast').textContent=t;$('toast').classList.add('show');setTimeout(()=>$('toast').classList.remove('show'),1600)}
+function render(){
+ const a=getAll(),d=a.days[todayKey()], checked=!!d.checkin;
+ $('dateLabel').textContent=new Intl.DateTimeFormat('en-GB',{weekday:'long',day:'numeric',month:'long'}).format(new Date());
+ $('preCheckin').classList.toggle('hidden',checked);$('postCheckin').classList.toggle('hidden',!checked);$('updateCheckin').classList.toggle('hidden',!checked);
+ if(checked){const r=recovery(d);$('recoveryState').textContent=r.state;$('recoveryWhy').textContent=r.why;$('todayHeadline').textContent=r.state==='Well recovered'?"You're starting strongly today":r.state==='Take it easier'?"Give yourself a little room today":"You're starting from a steady place";
+   if(r.state==='Take it easier'){ $('focusTitle').textContent='Protect your recovery';$('focusText').textContent='Keep the basics going, but take some pressure off harder movement today.';$('startWith').textContent='Start with: water, a decent meal and an easier pace.'}
+   else{$('focusTitle').textContent='Keep the balance';$('focusText').textContent='Nothing needs fixing this morning. Eat well, drink regularly and move as planned.';$('startWith').textContent='Start with: get some water in this morning.'}
+ }
+ const fs=foodScore(d);$('foodMini').textContent=fs==null?'Not logged':fs+'/10';$('foodSub').textContent=fs==null?'Add your first meal':fs>=8?'Mostly minimally processed':'Keep the next meal simple';
+ $('moveMini').textContent=!checked?'Not planned':d.movePlan==='rest'?'Rest / normal day':d.movePlan[0].toUpperCase()+d.movePlan.slice(1)+' planned';$('moveSub').textContent=d.moveMinutes?d.moveMinutes+' min planned':'No pressure';
+ const ss=sleepScore(d);$('sleepMini').textContent=ss==null?'Not checked':ss>=8?'Strong':ss>=6?'OK':'Needs care';$('sleepSub').textContent=ss==null?'Morning check-in':ss+'/10';
+ $('waterMini').textContent=hydrationStatus(d);$('waterSub').textContent=(d.water||0)+' ml today';$('waterTotal').textContent=d.water||0;$('waterStatus').textContent=hydrationStatus(d);
+ $('mealList').innerHTML=d.meals?.length?d.meals.map(m=>`<div class="meal"><div class="mealTop"><b>${escapeHtml(m.text)}</b><span class="mealTag">${mealLabel(m.nova4)}</span></div><small>${100-m.nova4}% NOVA 1–3 estimate</small></div>`).join(''):'<p class="small">No meals logged yet.</p>';
+ renderAlcohol(d);renderInsights(a,d);renderReview(a);
+}
+function renderAlcohol(d){const el=$('alcoholChoices');el.innerHTML=['None','1','2','3','4+'].map((x,i)=>`<button type="button" data-alcohol="${i}" class="${(+d.alcohol||0)===i?'active':''}">${x}</button>`).join('')}
+function renderInsights(a,d){const n=loggedDays(a),pct=Math.min(n,7)/7*100;$('learningBar').style.width=pct+'%';$('learningDays').textContent=`${Math.min(n,7)} of 7 days toward your first full review`;
+ if(n<3){$('learningTitle').textContent='Building your picture';$('learningText').textContent='Keep logging and BetterDay will start looking for relationships between what you do and how you feel.';$('insightNowTitle').textContent='Too early to call';$('insightNowText').textContent="We won't invent patterns before there's enough evidence."}
+ else if(n<7){$('learningTitle').textContent='Starting to notice';$('learningText').textContent='There is enough history for tentative observations, but BetterDay will keep gathering evidence.';$('insightNowTitle').textContent='A pattern may be emerging';$('insightNowText').textContent='Your better logged days tend to combine stronger food choices with regular hydration. We need more days before treating that as reliable.'}
+ else{$('learningTitle').textContent='Your patterns are taking shape';$('learningText').textContent='BetterDay now has enough history to start comparing behaviours with how you feel the next morning.';$('insightNowTitle').textContent='Consistency looks useful';$('insightNowText').textContent='Across your recent days, balanced food, hydration and movement tend to sit alongside better recovery. Treat this as a personal trend, not a rule.'}
+ if(d.checkin){const r=recovery(d);$('insightRecoveryTitle').textContent=r.state;$('insightRecoveryText').textContent=r.why+' BetterDay treats HRV as a personal trend, not a population target.'}else{$('insightRecoveryTitle').textContent='Check in first';$('insightRecoveryText').textContent='Your morning check-in helps BetterDay interpret how you are responding.'}
+}
+function renderReview(a){const n=loggedDays(a);$('reviewCount').textContent=Math.min(n,7);$('reviewBar').style.width=Math.min(n,7)/7*100+'%';$('reviewBuilding').classList.toggle('hidden',n>=7);$('reviewReady').classList.toggle('hidden',n<7);if(n>=7){$('weekSummary').textContent='You kept several healthy behaviours moving together rather than chasing a single perfect score.';$('wentWellTitle').textContent='Food and sleep stayed steady';$('wentWellText').textContent='Most logged meals were minimally processed and your sleep was generally supportive of recovery.';$('noticedTitle').textContent='Hydration is the least consistent habit';$('noticedText').textContent='Your stronger days more often included regular drinking earlier in the day. This is an emerging pattern, not a certainty.';$('nextFocusTitle').textContent='Make hydration easier';$('nextFocusText').textContent='Keep food, movement and sleep going. Try getting your first 500 ml in before lunch rather than changing everything at once.'}}
+function escapeHtml(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]))}
+document.addEventListener('click',e=>{const go=e.target.closest('[data-go]');if(go)show(go.dataset.go);const w=e.target.closest('[data-water]');if(w){let a=getAll();a.days[todayKey()].water=(+a.days[todayKey()].water||0)+(+w.dataset.water);save(a);render();toast('Hydration added');}const al=e.target.closest('[data-alcohol]');if(al){let a=getAll();a.days[todayKey()].alcohol=+al.dataset.alcohol;save(a);render();}const demo=e.target.closest('[data-demo]');if(demo){seed(demo.dataset.demo);$('demoSheet').classList.add('hidden');}});
+$('mood').addEventListener('input',e=>$('moodValue').textContent=e.target.value);
+$('movePlan').addEventListener('change',e=>$('moveDurationWrap').classList.toggle('hidden',e.target.value==='rest'));
+$('checkinForm').addEventListener('submit',e=>{e.preventDefault();let a=getAll(),d=a.days[todayKey()];['sleepHours','sleepQuality','mood','movePlan','moveMinutes','hrv','hrvBase','rhr','rhrBase'].forEach(id=>d[id]=$(id).value);d.checkin=true;save(a);show('today');toast('Morning check-in saved');});
+$('mealForm').addEventListener('submit',e=>{e.preventDefault();const text=$('mealText').value.trim();if(!text)return toast('Describe the meal first');const nova4=+document.querySelector('input[name=mealType]:checked').value;let a=getAll(),d=a.days[todayKey()];d.meals.push({text,nova4,at:Date.now()});save(a);$('mealText').value='';$('mealConfirmation').innerHTML=`<b>Meal added ✓</b><p>${mealLabel(nova4)}. BetterDay will use this as an estimate for your food pattern.</p>`;$('mealConfirmation').classList.remove('hidden');render();});
+$('photoBtn').addEventListener('click',()=>toast('Photo analysis comes after the V3 interaction test'));
+$('demoBtn').onclick=()=>$('demoSheet').classList.remove('hidden');$('closeDemo').onclick=()=>$('demoSheet').classList.add('hidden');
+function seed(mode){if(mode==='reset'){localStorage.removeItem(KEY);render();return}let a={days:{}};const count=mode==='day1'?1:mode==='day4'?4:8;for(let i=count-1;i>=0;i--){let dt=new Date();dt.setDate(dt.getDate()-i);let k=dt.toISOString().slice(0,10);a.days[k]={...emptyDay(),checkin:true,sleepHours:7.2+(i%3)*.2,sleepQuality:8,mood:7+(i%2),movePlan:i%3===0?'rest':'moderate',moveMinutes:i%3===0?'':45,hrv:48,hrvBase:50,rhr:42,rhrBase:42,water:1200+(i%3)*300,meals:[{text:'Breakfast with yoghurt, fruit and nuts',nova4:5},{text:'Simple home-cooked meal',nova4:i%3===0?15:5}],alcohol:i%4===0?2:0};}a.days[todayKey()] ||= emptyDay();save(a);render();toast('Demo data loaded');}
+(function init(){const d=day();['sleepHours','sleepQuality','mood','movePlan','moveMinutes','hrv','hrvBase','rhr','rhrBase'].forEach(id=>{if(d[id]!==undefined&&$(id))$(id).value=d[id]});if(d.mood)$('moodValue').textContent=d.mood;$('moveDurationWrap').classList.toggle('hidden',(d.movePlan||'rest')==='rest');render();})();
+</script>
+</body></html>
