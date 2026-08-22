@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<title>BetterDay V3.3.2</title>
+<title>BetterDay V3.3.3</title>
 <style>
 :root{--bg:#f5f5f0;--card:#fff;--ink:#1e2925;--muted:#6e7974;--line:#dde4df;--accent:#315c4a;--accent2:#e7efe9;--good:#2f7256;--warm:#f0ebe1}
 *{box-sizing:border-box}html,body{margin:0;background:#dfe4df;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:var(--ink)}body{display:flex;justify-content:center}.app{width:min(430px,100vw);min-height:100dvh;background:var(--bg);padding-bottom:104px}header{padding:calc(17px + env(safe-area-inset-top)) 20px 10px;display:flex;justify-content:space-between;align-items:center}.logo{font-size:23px;font-weight:850;letter-spacing:-1px}.textbtn,.back{border:0;background:none;color:var(--accent);font-weight:800}.back{padding:8px 0}main{padding:0 18px 46px}.screen{display:none}.screen.active{display:block}h1{font-size:31px;line-height:1.05;letter-spacing:-1.2px;margin:7px 0 7px}h2{font-size:20px;letter-spacing:-.4px;margin:7px 0}.sub,.small,p{color:var(--muted);line-height:1.5}.sub{font-size:14px}.small{font-size:12px}.eyebrow{font-size:11px;font-weight:850;letter-spacing:.5px;color:var(--muted)}.light{color:#dce8e2}.card{background:var(--card);border:1px solid var(--line);border-radius:21px;padding:17px;margin:14px 0}.hero{background:var(--accent);color:white;border:0}.hero p{color:#e2ece7}.hero.soft{background:var(--accent2);color:var(--ink)}.hero.soft p{color:var(--muted)}.heroIcon{font-size:26px}.heroTitle{font-size:29px;font-weight:850;letter-spacing:-1px;margin-top:5px}.heroTitle.dark{color:var(--ink)}.focusCard{border-left:4px solid var(--accent)}.tip{background:var(--accent2);border-radius:12px;padding:11px;margin-top:12px;font-size:13px;font-weight:700}.sectionTitle{font-weight:850;margin:22px 0 9px}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px}.metric{background:#fff;border:1px solid var(--line);border-radius:16px;padding:13px;min-height:91px}.metric span,.metric small{display:block;color:var(--muted);font-size:11px}.metric strong{display:block;font-size:16px;margin:7px 0 3px}.primary,.secondary,.photo{width:100%;border-radius:14px;padding:14px;font-weight:850;font-size:15px}.primary{border:0;background:var(--accent);color:#fff}.primary:disabled{opacity:.4;cursor:not-allowed}.secondary,.photo{border:1px solid #b9c8c0;background:#fff;color:var(--accent);margin-top:10px}.photo{display:flex;justify-content:space-between}.photo span{font-size:11px;color:var(--muted)}label{display:block;font-size:12px;font-weight:800;margin:12px 0}input,select,textarea{display:block;width:100%;margin-top:7px;border:1px solid var(--line);background:#fff;border-radius:13px;padding:12px;font:inherit}input[type=range]{padding:0}.moodChoices{display:grid;grid-template-columns:repeat(5,1fr);gap:7px;margin-top:10px}.moodChoices button{border:1px solid var(--line);background:#fff;border-radius:11px;padding:9px 0;font-weight:800;color:var(--ink)}.moodChoices button.active{background:var(--accent);color:#fff;border-color:var(--accent)}.rangeEnds{display:flex;justify-content:space-between;font-size:11px;color:var(--muted)}details summary{font-weight:850;cursor:pointer}details summary span{font-weight:500;color:var(--muted);font-size:12px}.row{display:flex;justify-content:space-between;gap:10px;align-items:center}.quick{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px}.quick button{border:1px solid var(--line);background:#fff;border-radius:13px;padding:10px 5px;font-size:17px}.quick b,.quick small{display:block;font-size:11px}.tag{background:var(--accent2);color:var(--accent);border-radius:999px;padding:6px 9px;font-size:11px;font-weight:850}.assessment{margin:14px 0}.assessment>span{font-size:12px;color:var(--muted)}.segmented label{margin:7px 0}.segmented input{display:none}.segmented span{display:block;border:1px solid var(--line);border-radius:12px;padding:11px;font-weight:700}.segmented input:checked+span{border-color:var(--accent);background:var(--accent2);color:var(--accent)}.alcohol{display:grid;grid-template-columns:repeat(5,1fr);gap:6px}.alcohol button{padding:10px 3px;border:1px solid var(--line);border-radius:11px;background:#fff;font-weight:800}.alcohol button.active{background:var(--accent);color:#fff}.meal{padding:10px 0;border-bottom:1px solid var(--line)}.meal:last-child{border-bottom:0}.mealTop{display:flex;justify-content:space-between;gap:8px}.mealTag{font-size:10px;font-weight:850;color:var(--good)}.success{background:#eef6f0;border-color:#d3e7d9}.progress{height:9px;background:#dce4df;border-radius:99px;overflow:hidden;margin:14px 0 6px}.progress div{height:100%;background:var(--accent);width:0}.bigProgress{font-size:48px;font-weight:850;margin-top:12px}.bigProgress small{font-size:17px;color:var(--muted)}.infoBtn,.linkBtn{border:0;background:none;color:var(--accent);font-weight:800;cursor:pointer}.infoBtn{width:22px;height:22px;border:1px solid var(--line);border-radius:50%;padding:0;font-size:12px}.infoRow{display:flex;align-items:center;gap:6px}.infoBox{background:#eef3ef;border-radius:12px;padding:12px;margin-top:8px;font-size:12px;line-height:1.45;color:var(--muted)}.confirmActions{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px}.confirmActions button,.choiceStack button{padding:10px;border:1px solid var(--line);border-radius:12px;background:#fff;font-weight:800}.choiceStack button{display:block;width:100%;margin:5px 0;text-align:left}.hidden{display:none!important}.toast{position:fixed;bottom:90px;left:50%;transform:translateX(-50%);background:#1e2925;color:#fff;padding:10px 14px;border-radius:99px;font-size:12px;opacity:0;pointer-events:none;transition:.2s}.toast.show{opacity:1}.sheet{position:fixed;inset:0;background:#0006;display:flex;align-items:flex-end;justify-content:center;z-index:20}.sheetCard{width:min(430px,100vw);background:#fff;border-radius:24px 24px 0 0;padding:20px 20px calc(20px + env(safe-area-inset-bottom))}.sheetCard>button:not(.secondary){width:100%;padding:13px;margin:5px 0;border:1px solid var(--line);border-radius:12px;background:#fff;font-weight:800}nav{position:fixed;left:50%;transform:translateX(-50%);bottom:0;width:min(430px,100vw);background:#fff;border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(4,1fr);padding:7px 6px calc(7px + env(safe-area-inset-bottom));z-index:10}nav button{border:0;background:none;font-size:20px;color:#64706b}nav button span{display:block;font-size:10px;font-weight:850}@media(min-width:700px){.app{box-shadow:0 0 40px #0001}}
@@ -148,7 +148,7 @@
 </nav>
 <div id="toast" class="toast"></div>
 <div id="demoSheet" class="sheet hidden"><div class="sheetCard">
-<h2>Prototype tools</h2><p class="small"><b>BetterDay Prototype v3.3.2</b></p>
+<h2>Prototype tools</h2><p class="small"><b>BetterDay Prototype v3.3.3</b></p>
 <p>Jump forward without waiting a week.</p>
 <button data-demo="day1">Day 1 — clean start</button>
 <button data-demo="day4">Day 4 — 3 historical days</button>
@@ -168,6 +168,12 @@
 const KEY='betterday-v33';
 const $=id=>document.getElementById(id);
 const todayKey=()=>new Date().toISOString().slice(0,10);
+function greetingForNow(){
+  const hour=new Date().getHours();
+  if(hour<12)return 'GOOD MORNING';
+  if(hour<18)return 'GOOD AFTERNOON';
+  return 'GOOD EVENING';
+}
 function emptyDay(){return{
   meals:[],water:0,waterTarget:2000,
   alcohol:null,alcoholExplicit:false,
@@ -306,7 +312,7 @@ function mealLabel(n){return n<=10?'Mostly minimally processed':n<=50?'Mixed':'M
 function loggedDays(a){return Object.values(a.days).filter(d=>d.checkin||d.meals?.length||d.water>0||d.alcoholExplicit||d.movementOutcome!=='unknown').length}
 function show(id){document.querySelectorAll('.screen').forEach(x=>x.classList.remove('active'));$(id).classList.add('active');window.scrollTo(0,0);render()}
 function toast(t){$('toast').textContent=t;$('toast').classList.add('show');setTimeout(()=>$('toast').classList.remove('show'),1600)}
-function render(){$('timeGreeting').textContent=greetingForNow();
+function render(){$('greeting').textContent=greetingForNow();
  const a=getAll(),d=a.days[todayKey()],checked=!!d.checkin;
  $('dateLabel').textContent=new Intl.DateTimeFormat('en-GB',{weekday:'long',day:'numeric',month:'long'}).format(new Date());
  $('preCheckin').classList.toggle('hidden',checked);$('postCheckin').classList.toggle('hidden',!checked);$('updateCheckin').classList.toggle('hidden',!checked);
@@ -330,13 +336,26 @@ function render(){$('timeGreeting').textContent=greetingForNow();
  const ss=sleepScore(d),q={4:'Poor',6:'OK',8:'Good',10:'Great'}[+d.sleepQuality]||'';$('sleepMini').textContent=ss==null?'Not checked':ss>=8?'Strong':ss>=6?'OK':'Needs care';$('sleepSub').textContent=ss==null?'Morning check-in':`${d.sleepHours} hrs · ${q}`;
  $('waterMini').textContent=hydrationStatus(d);$('waterSub').textContent=d.water?(d.water+' ml today'):'Add your first drink';$('waterTotal').textContent=d.water||0;$('waterStatus').textContent=hydrationStatus(d);
  $('mealList').innerHTML=d.meals?.length?d.meals.map((m,i)=>`<div class="meal"><div class="mealTop"><b>${escapeHtml(m.text)}</b><span class="mealTag">${mealLabel(m.nova4)}</span></div><button class="linkBtn" type="button" data-mealdetail="${i}">Details ⓘ</button><div id="mealDetail-${i}" class="infoBox hidden">Prototype estimate: about ${100-m.nova4}% NOVA 1–3 and ${m.nova4}% NOVA 4 for scoring. This is not a precise nutritional analysis.</div></div>`).join(''):'<p class="small">No meals logged yet.</p>';
- renderAlcohol(d);renderMovementOutcome(d);renderInsights(a,d);renderReview(a);validateCheckin();
+ bindStaticLogControls();
+ try{renderAlcohol(d)}catch(err){console.error('Alcohol render failed',err)}
+ try{renderMovementOutcome(d)}catch(err){console.error('Movement render failed',err)}
+ try{renderInsights(a,d)}catch(err){console.error('Insights render failed',err)}
+ try{renderReview(a)}catch(err){console.error('Review render failed',err)}
+ validateCheckin();
 }
 function renderAlcohol(d){
   const el=$('alcoholChoices');
-  el.innerHTML=['None','1','2','3','4+'].map((x,i)=>`<button type="button" data-alcohol="${i}" class="${d.alcoholExplicit&&+d.alcohol===i?'active':''}">${x}</button>`).join('');
-  el.querySelectorAll('[data-alcohol]').forEach(btn=>{
-    btn.onclick=(e)=>{e.preventDefault();e.stopPropagation();setAlcohol(btn.dataset.alcohol)};
+  if(!el)return;
+  const options=[['None',0],['1',1],['2',2],['3',3],['4+',4]];
+  el.innerHTML=options.map(([label,value]) =>
+    `<button type="button" data-alcohol="${value}" class="${d.alcoholExplicit&&Number(d.alcohol)===value?'active':''}">${label}</button>`
+  ).join('');
+  el.querySelectorAll('button[data-alcohol]').forEach(btn=>{
+    btn.addEventListener('click',e=>{
+      e.preventDefault();
+      e.stopPropagation();
+      setAlcohol(btn.dataset.alcohol);
+    });
   });
 }
 function renderMovementOutcome(d){const card=$('movementCompletionCard');const planned=!!d.movePlan&&d.movePlan!=='rest';card.classList.toggle('hidden',!planned);const vals=[['Yes','completed'],['Partly','partly_completed'],['No','not_done']];$('movementOutcomeChoices').innerHTML=vals.map(([label,val])=>`<button type="button" data-movementoutcome="${val}" class="${d.movementOutcome===val?'active':''}">${label}</button>`).join('')}
@@ -373,8 +392,13 @@ function setAlcohol(drinks){
   toast(value===0?'No alcohol logged':'Alcohol updated');
 }
 function bindStaticLogControls(){
-  document.querySelectorAll('[data-water]').forEach(btn=>{
-    btn.onclick=(e)=>{e.preventDefault();e.stopPropagation();addHydration(btn.dataset.water)};
+  document.querySelectorAll('button[data-water]').forEach(btn=>{
+    btn.onclick=null;
+    btn.onclick=(e)=>{
+      e.preventDefault();
+      e.stopPropagation();
+      addHydration(btn.dataset.water);
+    };
   });
 }
 
